@@ -7,7 +7,7 @@ trigger:
   
 pool:
   vmImage: 'windows-latest'
-  demands: Windows Powershell
+  demands: VISUALSTUDIO
 variables:
 - group: User credentials
 
