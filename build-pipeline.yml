@@ -1,4 +1,4 @@
-name: Build-Pipeline-MentalHealth
+name: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
 trigger:
   branches:
     include:
@@ -10,15 +10,5 @@ pool:
 variables:
 - group: User credentials
 
-stages:
-- stage: Makesurethathepipelineisworking
-  dependsOn: []
-  displayName: Printinconsolethecontentofthefile1
-  jobs:
-  - job: Printinconsolethecontentofthefile1
-    displayName: "Printinconsolethecontentofthefile1"
-    -steps:
-     - task: PowerShell@2
-    inputs:
-    targetType: 'inline'
-    script: 'echo ''Hello ${username}'''
+steps:
+- pwsh: echo $(Build.BuildNumber) and $(username) //output updated build number
