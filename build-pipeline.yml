@@ -6,7 +6,8 @@ trigger:
     - Feature*/*
   
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
+  demands: Windows Powershell
 variables:
 - group: User credentials
 
