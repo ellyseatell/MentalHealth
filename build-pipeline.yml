@@ -17,8 +17,8 @@ stages:
   jobs:
   - job: Printinconsolethecontentofthefile1
     displayName: "Printinconsolethecontentofthefile1"
-    -steps:   
-    - task: PowerShell@2
-  inputs:
+    -steps:
+     - task: PowerShell@2
+    inputs:
     targetType: 'inline'
     script: 'echo ''Hello ${username}'''
