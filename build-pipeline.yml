@@ -6,9 +6,10 @@ trigger:
     - Feature*/*
   
 pool:
-  vmImage: 'windows-latest'
-  demands: 
- - agent.os equals Windows
+  vmImage: 'windows-latest"
+  name: myPrivateAgents    # your job runs on an agent in this pool
+  demands: #demans is used for self hosted agents not for microsoft azure hosted agents
+ - agent.os equals Windows # the agent must have this capability to run the job
 variables:
 - group: User credentials
 
