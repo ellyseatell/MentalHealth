@@ -11,4 +11,4 @@ variables:
 - group: User credentials
 
 steps:
-- pwsh: echo $(Build.BuildNumber) and $(username) //output updated build number
+- pwsh: echo $(Build.BuildNumber) and $[ variablegroups.User Credentials.username ] //output updated build number
