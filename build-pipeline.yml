@@ -1,0 +1,25 @@
+name: Build-Pipeline-MentalHealth
+trigger:
+  branches:
+    include:
+    - main
+    - Feature*/*
+  
+pool:
+  vmImage: 'ubuntu-latest'
+variables:
+- group: User credentials
+
+stages:
+- stage: Makesurethathepipelineisworking
+  dependsOn: []
+  displayName: Printinconsolethecontentofthefile1
+  jobs:
+  - job: Printinconsolethecontentofthefile1
+    displayName: "Printinconsolethecontentofthefile1"
+    steps:
+    - task: Bash@3
+      displayName: 'Create nuget.config'
+      inputs:
+        targetType: inline
+        script: 'echo 'Hello ${username}'
